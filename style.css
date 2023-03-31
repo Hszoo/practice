@@ -28,16 +28,15 @@ a:link, a:visited {
 
 nav {
     position:fixed;
-    border: 0;
-    width: 15%;
+    border: 0; /*테두리 x */
+    width: 15%; 
     height: 100vh;
-    line-height: 80px;
+    line-height: 80px; /*뷰포트의 높이길이에 맞춰 왼쪽 전체 메뉴 */
     display:flex;
     align-items:center;
     justify-content: center;
     text-align: center;
     background-color: rgb(19, 55, 29);
-
 }
 
 nav::after {
