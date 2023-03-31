@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box; /* 테두리까지 포함한 요소 자체를 기준으로 크기 조정*/
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+    margin: 0; /*상하 0, 좌우 자동으로 동일한 값으로 맞춤, 좌우의 여백을 같게해서 바디 내 태그 전부 가운데 정렬 가능 
+    주로 부모 요소에서 사용하여 하위의 요소들을 전부 가운데로 모을 때 사용 부모의 너비를 기준으로 마진 계산 */
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif; /* 이 폰트를 전체에 적용하고 싶다 -> 바디 태그내 속성으로 지정해주면 됨*/
+}
+
+/* 링크를 클릭 여부로 텍스트에 밑줄 색 변하는 것 설정 */
+a:link, a:visited {
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
+
+.container {
+    width:960px; /* 통상적으로 너비 90픽셀 사용하고 이 너비는 배경이 아니라 내부 컨텐츠의 너비를 의미 */
+    margin:0 auto;
+}
+
+.img{
+    justify-content: center;
+}
+
+nav {
+    position:fixed;
+    border: 0;
+    width: 15%;
+    height: 100vh;
+    line-height: 80px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(19, 55, 29);
+
+}
+
+nav::after {
+    content: "";
+    display : block;
+    clear: both;
+}
+
+.nav-logo {
+    font-size: 15px;
+    justify-content: center;
+    float: left;
+    margin: 0;
+}
+
+#profile-img {
+    width: 90px;
+    height: 90px;
+    transform: scale(1); /* 이미지 사이즈 고정 */
+    border-radius: 70%
+}
+.nav-menu {
+    float: right;
+    text-align: center;
+    display: flex;
+}
+
+.nav-btn {
+    list-style-type: none;
+    margin: 0;
+}
+
+ul.nav-btn > li { /*ul 태그 의 클래스 명이 .. 인 li 태그 */
+    float: left;
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* header */
+
+.hd {
+    position: relative;
+    height: 400px;
+    text-align: center; 
+    /* 인라인 요소들, 텍스트 외에도 가운데 정렬 해 주기 위해서  */
+}
+
+.hd-title {
+    font-size: 100px;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-top: 200px;
+    color:rgb(72, 72, 72);
+}
+
+.hd-content {
+    font-size: 25px;
+}
+
+.hd:before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 85%;
+    height: 100%;
+    opacity: 0.6; 
+    background-image: url(./forest.jpg); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.hd.container {
+    position :relative;
+    color: black;
+}
+
+/* 자기 소개 부분 */
+.about-me {
+    font-weight: bold;
+    color:rgb(40, 33, 33);
+}
+
+/* section */
+.sec {
+    width:100%;
+    text-align : center;
+    font-size: 29px;
+    padding: 150px 200px;
+    background-color: rgb(245, 245, 245);
+}
+
+.sec article {
+    float: left;
+    text-align:center;
+    width: 300px;
+    /* 일렬배열 만드는 중*/
+}
+
+/* 덮어쓰는 속성은 아래에 적어줘야됨 -> 아래 속성으로 마지막 태그의 margin right는 
+마진 주지 않음 */
+.set article:last-child {
+    margin-right: 0
+}
+
+.sec h2 {
+    text-align:center;
+    width: 300px;
+    color:rgb(125, 125, 125);
+    margin-left:100px;
+    margin-right:100px;
+}
+
+.sec article img {
+    margin-left:100px;
+    margin-right:100px;
+    width: 90%;
+    height: auto;
+}
+
+.sec article p {
+    width:960px;
+    margin-left:100px;
+    margin-right:100px;
+    font-style:italic;
+    color:rgb(111, 111, 151);
+}
+/* 사진 자체의 크기 조정 */
+.card-img {
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+
+}
+
+.sec::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contact-layout{
+    margin-left:100px;
+    margin-right:100px;
+    width: 10%;
+    height: auto;
+}
+
+/* footer */
+.ft {
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(19, 55, 29);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ft p {
+    color : white;
+}
+
+div:last-child {
+    margin-right: 0;
+}
